@@ -1,4 +1,4 @@
-# Claude Code MCP Server
+# Claude Code MCP 🧑‍💻 - One-shot MCP server for Claude Code (an agent inside your agent)
 
 <img src="assets/claude_code_mcp_logo.png" alt="Claude Code MCP Logo">
 
