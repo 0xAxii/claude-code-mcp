@@ -291,6 +291,14 @@ export class ClaudeCodeServer {
         }
 
         const claudeProcessArgs = ['--dangerously-skip-permissions', '-p', prompt];
+
+        // Add model option if CLAUDE_MODEL environment variable is set
+        const claudeModel = process.env.CLAUDE_MODEL;
+        if (claudeModel) {
+          claudeProcessArgs.unshift('--model', claudeModel);
+          debugLog(`[Debug] Using model from CLAUDE_MODEL env: ${claudeModel}`);
+        }
+
         debugLog(`[Debug] Invoking Claude CLI: ${this.claudeCliPath} ${claudeProcessArgs.join(' ')}`);
 
         const { stdout, stderr } = await spawnAsync(
